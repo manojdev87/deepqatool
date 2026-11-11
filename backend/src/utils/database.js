@@ -60,6 +60,30 @@ function initDB() {
       screenshot_path TEXT,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
+
+    CREATE TABLE IF NOT EXISTS comparisons (
+      id TEXT PRIMARY KEY,
+      pairs TEXT NOT NULL,
+      status TEXT DEFAULT 'pending',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      completed_at DATETIME,
+      summary TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS comparison_results (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      compare_id TEXT NOT NULL,
+      uat_url TEXT NOT NULL,
+      prod_url TEXT NOT NULL,
+      diffs TEXT,
+      summary TEXT,
+      uat_screenshots TEXT,
+      prod_screenshots TEXT,
+      uat_content TEXT,
+      prod_content TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (compare_id) REFERENCES comparisons(id)
+    );
   `);
 
   console.log('Database initialized');

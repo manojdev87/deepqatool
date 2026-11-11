@@ -3,6 +3,8 @@ import Dashboard from './pages/Dashboard'
 import NewScan from './pages/NewScan'
 import ScanResults from './pages/ScanResults'
 import History from './pages/History'
+import CompareURLs from './pages/CompareURLs'
+import CompareResults from './pages/CompareResults'
 import './App.css'
 
 export default function App() {
@@ -21,6 +23,9 @@ export default function App() {
             <NavLink to="/scan" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
               <span>🚀</span> New Scan
             </NavLink>
+            <NavLink to="/compare" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
+              <span>🔄</span> Compare
+            </NavLink>
             <NavLink to="/history" className={({isActive}) => isActive ? 'nav-item active' : 'nav-item'}>
               <span>📋</span> History
             </NavLink>
@@ -31,6 +36,8 @@ export default function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/scan" element={<NewScan />} />
             <Route path="/scan/:scanId" element={<ScanResults />} />
+            <Route path="/compare" element={<CompareURLs />} />
+            <Route path="/compare/:compareId" element={<CompareResults />} />
             <Route path="/history" element={<History />} />
           </Routes>
         </main>

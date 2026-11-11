@@ -33,7 +33,8 @@ export default function ScanResults() {
           }
         }
       } catch (e) {
-        clearInterval(pollRef.current)
+        // Only stop polling on 404 (scan truly not found), not transient errors
+        if (e.response?.status === 404) clearInterval(pollRef.current)
       }
     }, 2000)
 
