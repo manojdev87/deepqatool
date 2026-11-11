@@ -1,0 +1,11 @@
+{
+  "name": "qa-auditor",
+  "version": "1.0.0",
+  "description": "Production-ready Website QA Auditor",
+  "scripts": {
+    "setup": "cd backend && npm install && npx playwright install chromium && cd ../frontend && npm install",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "dev": "start cmd /k \"cd backend && npm start\" && start cmd /k \"cd frontend && npm run dev\""
+  }
+}

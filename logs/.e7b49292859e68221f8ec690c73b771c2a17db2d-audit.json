@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "c:\\Users\\manojsrivastav\\Music\\sukesh\\qatool\\logs\\.e7b49292859e68221f8ec690c73b771c2a17db2d-audit.json",
+    "files": [
+        {
+            "date": 1794390388161,
+            "name": "c:\\Users\\manojsrivastav\\Music\\sukesh\\qatool\\logs\\mcp-puppeteer-2026-11-11.log",
+            "hash": "52cec51e7030f22677e832884d917d4bd8d49545c6ccb8dc01504778e99c3295"
+        }
+    ],
+    "hashType": "sha256"
+}
